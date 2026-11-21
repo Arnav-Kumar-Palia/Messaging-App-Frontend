@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   // In development the app calls relative /api and /ws URLs and Vite forwards
   // them to the backend, so the browser never makes a cross-origin request.
-  const target = env.API_PROXY_TARGET || 'http://localhost:8080'
+  const target = env.API_PROXY_TARGET || 'https://messaging-app-backend-1egv.onrender.com'
   const proxy = {
     '/api': { target, changeOrigin: true },
     // Live updates WebSocket (Vite's own HMR socket uses a different path).
